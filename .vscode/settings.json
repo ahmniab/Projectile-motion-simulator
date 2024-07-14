@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "ball.h": "c",
+        "raylib.h": "c",
+        "text_box.h": "c",
+        "controles.h": "c",
+        "engine.h": "c",
+        "movement.h": "c",
+        "queue.h": "c"
+    }
+}

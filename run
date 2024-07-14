@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/C/raylib/w64devkit/bin/gcc.exe -o main.exe main.c movement/movement.c movement/physics/engine.c helper.c objs/ball.c controles/text_box.c controles/controles.c objs/angle_arrow.c /C/raylib/raylib/src/raylib.rc.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -I./objs/ -I./controles/ -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
+./main
