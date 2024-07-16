@@ -17,7 +17,7 @@ void init_controler(){
     main_font = LoadFont("assets/fonts/Montserrat_MediumItalic.ttf"); 
 
     text_boxes[ANGLE_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 10 , 950 ,300 , 40);
-    text_boxes[V_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 350 , 950 ,300 , 40);
+    text_boxes[V_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 350 , 950 ,300 , 40);
     init_angle_arrow();
 }
 

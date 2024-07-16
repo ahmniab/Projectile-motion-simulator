@@ -22,7 +22,7 @@ void set_angle(World2d world , double deg_a){
     world->angle = deg2rad_(deg_a);
 }
 void set_v0(World2d world , int v0/*(m/s)*/){
-    world->v0 = v0;
+    world->v0 = v0 * world->meter_in_screan;
 }
 
 

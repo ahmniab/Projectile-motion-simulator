@@ -5,6 +5,7 @@
 
 bool started = false;
 int __ANGLE__ = 45;
+int __V0__ = 20;
 const float ballRadius = 3;
 World2d physics_world;
 float T = 0;
@@ -21,8 +22,9 @@ void init_components(){
     
     init_controler();
     set_angle_textbox(__ANGLE__);
+    set_v0_textbox(__V0__);
 
-    physics_world = new_world_2d(20 , 10 , (double)__ANGLE__,GROUND_LEVEL , 5);
+    physics_world = new_world_2d(__V0__ , 10 , (double)__ANGLE__,GROUND_LEVEL , 5);
     add_obj(physics_world , BALL_X, BALL_Y);
     target_world = LoadRenderTexture(SCREEN_W, SCREEN_H);
 }
@@ -83,6 +85,14 @@ void drow_objs(){
                 __ANGLE__ = angle;
                 set_angle(physics_world , (double)angle);
             }
+
+            int v0 = get_velocity();
+            if (v0 != -1)
+            {
+                __V0__ = v0;
+                set_v0(physics_world , __V0__);
+            }
+            
         }else{
             frame_counter++;
             T += frame_counter/840.0f;
