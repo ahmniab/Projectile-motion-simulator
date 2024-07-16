@@ -7,7 +7,7 @@
 int main(){
     InitWindow(SCREEN_W , SCREEN_H, "physics");
     SetTargetFPS(60);
-    SetWindowState(FLAG_FULLSCREEN_MODE);
+    SetWindowState(FLAG_WINDOW_UNDECORATED);
 
     init_components();
 

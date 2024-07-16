@@ -1,4 +1,6 @@
 #include "controles.h"
+#include "../objs/angle_arrow.h"
+#include "../movement/movement.h"
 #define BOX_NUM 2
 #define size_t unsigned long
 
@@ -16,10 +18,24 @@ void init_controler(){
 
     text_boxes[ANGLE_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 10 , 950 ,300 , 40);
     text_boxes[V_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 350 , 950 ,300 , 40);
+    init_angle_arrow();
+}
+
+bool mouse_on_textbox(){
+    for (size_t i = 0; i < BOX_NUM; i++)
+    {
+        if (text_boxes[i]->mouseOnText)
+        {
+            return true;
+        }
+        
+    }
+    return false;
     
 }
 
 void draw_controler(){
+    
     for (size_t i = 0; i < BOX_NUM; i++)
     {
         draw_text_box(text_boxes[i]);
@@ -29,8 +45,14 @@ void draw_controler(){
         text_position.y = text_boxes[i]->textbox_rectangle.y + 50;
 
         DrawTextEx(main_font, text_array[i], text_position, 30, 1, WHITE);
+        
     }
+    if (mouse_on_textbox())
+    {
+        SetMouseCursor(MOUSE_CURSOR_IBEAM);
+    }else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
     
+    draw_angle_arrow(get_working_angle());
 }
 
 char *get_text_string(TextboxName name , int * str_len){
@@ -44,4 +66,6 @@ void free_controler(){
         free_text_box(text_boxes[i]);
     }
     UnloadFont(main_font);
+    unload_angle_arrow();
+
 }

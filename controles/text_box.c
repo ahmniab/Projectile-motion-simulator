@@ -47,7 +47,7 @@ void draw_text_box(Text_box *ptbx){
 
         if (ptbx->mouseOnText)
         {
-            SetMouseCursor(MOUSE_CURSOR_IBEAM);
+            // SetMouseCursor(MOUSE_CURSOR_IBEAM);
 
             int key = GetCharPressed();
 
@@ -71,7 +71,7 @@ void draw_text_box(Text_box *ptbx){
                 ptbx->buff[ptbx->len] = '\0';
             }
         }
-        else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
+        // else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
         if (ptbx->mouseOnText) ptbx->framesCounter++;
         else ptbx->framesCounter = 0;

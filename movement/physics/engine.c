@@ -21,6 +21,9 @@ World2d new_world_2d(int v0 , int G , double angle,int ground_level, int meter_i
 void set_angle(World2d world , double deg_a){
     world->angle = deg2rad_(deg_a);
 }
+void set_v0(World2d world , int v0/*(m/s)*/){
+    world->v0 = v0;
+}
 
 
 void add_obj(World2d world , float init_x , float init_y){

@@ -12,6 +12,9 @@
 
 void init_components();
 void drow_objs();
+Image get_world_image();
 void free_components();
+int get_working_angle();
+
 
 #endif //MOVEMENT_H
