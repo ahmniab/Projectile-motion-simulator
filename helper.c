@@ -20,6 +20,32 @@ int str_2_pos_int(char int_str[] , int len){
     
     
 }
+float str_2_pos_float(char float_str[] , int len){
+
+    if (len == 0 || !float_str) return -1;
+
+    bool dot = false;
+    for (long i = 0; i < len; i++)
+    {
+        if (float_str[i] == '.' )
+        {
+            if (dot)
+            {
+                return -1;
+            }
+            dot = true ;
+            continue;
+            
+        }
+        
+        if(float_str[i] < '0' || float_str[i] > '9') return -1;
+    }
+
+    float nm ;
+    sscanf(float_str,"%f",&nm);
+    return nm;
+
+}
 
 int get_velocity(){
     int v0_str_len;
@@ -35,6 +61,12 @@ int get_angle(){
 
     return (angle >= 0 && angle <= 90 )? angle : -1;
 }
+float get_G(){
+    int G_str_len;
+    char* G_str = get_text_string(G_TEXTBOX , &G_str_len);
+    float G = str_2_pos_float(G_str , G_str_len);
+    return G;
+}
 
 
 void set_angle_textbox(int angle){
@@ -47,5 +79,11 @@ void set_v0_textbox(int v0){
     int len;
     char *str_v0 = get_text_string(V_TEXTBOX , &len);
     sprintf(str_v0 , "%d" , v0);
+
+}
+void set_g_textbox(float G){
+    int len;
+    char *str_G = get_text_string(G_TEXTBOX , &len);
+    sprintf(str_G , "%.2f" , G);
 
 }

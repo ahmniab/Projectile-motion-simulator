@@ -1,12 +1,13 @@
 #include "controles.h"
 #include "../objs/angle_arrow.h"
 #include "../movement/movement.h"
-#define BOX_NUM 2
+#define BOX_NUM 3
 #define size_t unsigned long
 
 char  text_array[BOX_NUM][25] = {
     "Angle (deg)",
-    "Velocity (m/s)"
+    "Velocity (m/s)" ,
+    "Gravity (m/(s*s))"
 };
 
 Text_box *text_boxes[BOX_NUM];   
@@ -16,11 +17,14 @@ Font main_font ;
 void init_controler(){
     main_font = LoadFont("assets/fonts/Montserrat_MediumItalic.ttf"); 
 
-    text_boxes[ANGLE_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 10 , 950 ,300 , 40);
-    text_boxes[V_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 350 , 950 ,300 , 40);
+    text_boxes[ANGLE_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 10 , 940 ,300 , 40);
+    text_boxes[V_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 350 , 940 ,300 , 40);
+    text_boxes[G_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 690 , 940 ,300 , 40);
     init_angle_arrow();
 }
-
+Font get_font(){
+    return main_font;
+}
 bool mouse_on_textbox(){
     for (size_t i = 0; i < BOX_NUM; i++)
     {

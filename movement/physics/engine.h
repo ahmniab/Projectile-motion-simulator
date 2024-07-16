@@ -6,7 +6,7 @@ struct WORLD2D
 {
     int v0;
     Vector2 init_coordinates;
-    int G;
+    float G;
     double angle;
     int ground_level;
     int meter_in_screan;
@@ -15,11 +15,15 @@ struct WORLD2D
 
 typedef struct WORLD2D *World2d ; // a pointer to struct WORLD2D
 
-World2d new_world_2d(int v0 , int G , double angle,int ground_level , int meter_in_screan/*how long the meter well be in your screan*/);
+World2d new_world_2d(int v0 , float G , double angle,int ground_level , int meter_in_screan/*how long the meter well be in your screan*/);
 void set_angle(World2d world , double deg_a);
 void set_v0(World2d world , int v0/*(m/s)*/);
+void set_G(World2d world , float G/*(m/s^2)*/);
 void add_obj(World2d world , float init_x , float init_y);
 Vector2 new_coordinats(World2d world , float t );
+float max_h(World2d world);
+double max_th(World2d world);
+Vector2 max_coordinats(World2d world );
 void free_world2d(World2d world);
 
 

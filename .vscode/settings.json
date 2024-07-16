@@ -6,6 +6,13 @@
         "controles.h": "c",
         "engine.h": "c",
         "movement.h": "c",
-        "queue.h": "c"
+        "queue.h": "c",
+        "array": "c",
+        "*.tcc": "c",
+        "memory": "c",
+        "istream": "c",
+        "tuple": "c",
+        "utility": "c",
+        "cmath": "c"
     }
 }

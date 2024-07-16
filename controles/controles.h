@@ -4,7 +4,8 @@
 #include "text_box.h"
 typedef enum {
     ANGLE_TEXTBOX                         = 0 ,
-    V_TEXTBOX                             = 1
+    V_TEXTBOX                             = 1 ,
+    G_TEXTBOX                             = 2
 } TextboxName;
 
 void init_controler();
@@ -12,6 +13,7 @@ void init_controler();
 
 void draw_controler();
 char *get_text_string(TextboxName name , int * str_len);
+Font get_font();
 void free_controler();
 
 
