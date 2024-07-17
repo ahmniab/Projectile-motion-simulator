@@ -1,44 +1,38 @@
 #include "raylib.h"
 #include <math.h>
-#include "movement/pysics/engine.h"
+#include "movement/timer.h"
+#include <stdio.h>
 
-int main(void)
-{
-
-    const int screenWidth = 1000;
-    const int screenHeight = 800;
-
-    InitWindow(screenWidth, screenHeight, "Moving Ball with Initial Velocity");
-
-    float ballRadius = 3;
-    
-
-
-    SetTargetFPS(60);     
-
-    World2d physics_world = new_world_2d(20 , 10 , 70,screenHeight - 100 , 5);
-    add_obj(physics_world , 20, screenHeight - 100);
-
-    while (!WindowShouldClose())    
-    {
-        
-    
-        BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-
-        for (float t = 0; t < 20; t += 0.3)
-        {
-            Vector2 ballPosition =  new_coordinats(physics_world, t  );
-            DrawCircleV(ballPosition, ballRadius, MAROON);
-            
-        }
-        
-
-        EndDrawing();
-    }
-    free_world2d(physics_world);
-
-    CloseWindow();  
-    return 0;
+void draw_red_circle(){
+    DrawCircle(250, 250, 50, RED);
+    // printf("red function\n");
 }
+
+void draw_green_circle(){
+    DrawCircle(250, 250, 50, GREEN);
+    // printf("green function\n");
+}
+
+
+int main(){
+    InitWindow(500 , 500, "test");
+    SetTargetFPS(60);
+    Timer *timer = create_timer();
+    add_function(timer,&draw_red_circle , 3 , 1);
+    add_function(timer,&draw_green_circle , 4 , 0.2);
+    // void (*fn)(void) = &draw_green_circle;
+    while (!WindowShouldClose())
+    {
+
+        BeginDrawing();
+            ClearBackground(RAYWHITE);
+            play_timer(timer);
+            // (*fn)();
+        EndDrawing();
+        
+    
+    }
+    free_timer(timer);
+    CloseWindow();
+}
+

@@ -17,7 +17,12 @@ int main(){
         BeginDrawing();
             ClearBackground((Color){ 13, 13, 13, 255 });
             drow_objs();
-            draw_controler();
+            if(!is_render_started()) draw_controler();
+            else
+            {
+                rendering_screen();
+            }
+            
         EndDrawing();
         
         

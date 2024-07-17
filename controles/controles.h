@@ -5,7 +5,8 @@
 typedef enum {
     ANGLE_TEXTBOX                         = 0 ,
     V_TEXTBOX                             = 1 ,
-    G_TEXTBOX                             = 2
+    G_TEXTBOX                             = 2 ,
+    PLAY_TEXTBOX                          = 3
 } TextboxName;
 
 void init_controler();

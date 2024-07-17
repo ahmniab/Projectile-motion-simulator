@@ -1,49 +1,108 @@
 #include <stdlib.h>
 #include <assert.h>
+#include <stdio.h>
 #include "timer.h"
 
 typedef struct __TIMER_NODE_
 {
-    double time;
-    void (*ation)();
+    double slow_down_factor;
+    double left_time;
+    double time_now;
+    void (*action)(double);
 }Timer_node;
 
 Timer *create_timer(){
-    Timer *new_timer = (*Timer) malloc(sizeof (Timer));
+    Timer *new_timer = (Timer*) malloc(sizeof (Timer));
     assert(new_timer);
     new_timer->actions = create_queue();
-    new_timer->end = false;
+    new_timer->end = true;
+    new_timer->end_fn = NULL;
+    new_timer->total_time = 0;
+    new_timer->time_now = 0;
     return new_timer;
 }
 
-void add_function(Timer *timer,void (*ation)() , double life_time){
+void start_timer(Timer *timer){
+    timer->end = false;
+}
+
+void set_end_fn(Timer *timer , void (*end_fn)(void)){
+    timer->end_fn = end_fn;
+}
+
+void add_function(Timer *timer,void (*action)(double) , double life_time , double slow_down_factor){
     assert(timer);
 
     Timer_node *new_timer_node = (Timer_node*) malloc(sizeof(Timer_node));
-    new_timer_node->time = time;
+    new_timer_node->left_time = life_time;
+    new_timer_node->time_now = 0;
     new_timer_node->action = action;
+    new_timer_node->slow_down_factor = slow_down_factor;
+    timer->total_time += life_time; 
 
-    void enqueue (Timer->queue, (void*) new_timer_node);
+    enqueue (timer->actions, (void*) new_timer_node);
+}
+void wait_time(Timer *timer , double time){
+    add_function(timer , NULL , time , 1);
+}
+void set_time_now(Timer *timer , double time_now){
+    assert(timer);
+    if (timer->end)
+    {
+        if (!is_q_empty(timer->actions))
+        {
+            Timer_node *node = (Timer_node*)queue_rear (timer->actions) ;
+            node->time_now = time_now;
+            // printf("tamam\n");
+            
+        }
+    }
+}
+void play_timer(Timer *timer){
+    assert(timer);
+    if (!timer->end)
+    {
+        if (is_q_empty(timer->actions))
+        {
+            if (timer->end_fn)
+            {
+                (*timer->end_fn)();
+            }
+            timer->end = true;
+            return;
+        }
+
+        Timer_node *node = (Timer_node*)queue_front (timer->actions) ;
+        if (node->left_time <= 0 )
+        {
+            node = dequeue(timer->actions);
+            free(node);
+            return;
+        }
+        if (node->action)
+        {        
+            (*(node->action))(node->time_now);
+        }
+        node->left_time -= 1.0 / (60.0 * node->slow_down_factor);
+        node->time_now += 1.0 / (60.0 * node->slow_down_factor);
+        timer->time_now += 1.0 / (60.0 * node->slow_down_factor);
+        // printf("now = %lf , left = %lf\n" ,node->time_now , node->left_time);
+    }
+    
 }
 
-void play_timer(Timer *timer){
-    if (is_q_empty(timer->actions))
-    {
-        timer->end = true;
-        return;
+void free_timer(Timer *timer){
+    if (!is_q_empty (timer->actions))
+    {    
+        for (
+            Timer_node * node = (Timer_node *)dequeue(timer->actions); 
+            !is_q_empty (timer->actions);
+            node = (Timer_node *) dequeue (timer->actions)
+        )
+        {
+            free(node);
+        }
     }
-
-    Timer_node *node = (Timer_node*)queue_front (timer->actions) ;
-    if (node->time <= 0 )
-    {
-        node = dequeue(timer->actions)
-        free(node);
-        return;
-    }
-
-    (*node->action)();
-    node->time -= GetFrameTime();
     
-
-    
+    free(timer);
 }

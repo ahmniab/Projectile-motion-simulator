@@ -12,6 +12,11 @@
 
 void init_components();
 void drow_objs();
+bool is_started();
+bool is_render_started();
+void draw_all_info(float time);
+void draw_ball_path();
+void rendering_screen(void);
 Image get_world_image();
 void free_components();
 int get_working_angle();

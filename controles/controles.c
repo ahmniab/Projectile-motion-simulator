@@ -1,13 +1,14 @@
 #include "controles.h"
 #include "../objs/angle_arrow.h"
 #include "../movement/movement.h"
-#define BOX_NUM 3
+#define BOX_NUM 4
 #define size_t unsigned long
 
-char  text_array[BOX_NUM][25] = {
+char  text_array[BOX_NUM][50] = {
     "Angle (deg)",
     "Velocity (m/s)" ,
-    "Gravity (m/(s*s))"
+    "Gravity (m/(s*s))" ,
+    "Play Slowdown Factor"
 };
 
 Text_box *text_boxes[BOX_NUM];   
@@ -20,6 +21,7 @@ void init_controler(){
     text_boxes[ANGLE_TEXTBOX] = create_new_text_box(2 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 10 , 940 ,300 , 40);
     text_boxes[V_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 350 , 940 ,300 , 40);
     text_boxes[G_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 690 , 940 ,300 , 40);
+    text_boxes[PLAY_TEXTBOX] = create_new_text_box(5 ,&main_font ,20,1,PURPLE,PURPLE,RED ,BLACK, 1030 , 940 ,300 , 40);
     init_angle_arrow();
 }
 Font get_font(){
@@ -56,7 +58,7 @@ void draw_controler(){
         SetMouseCursor(MOUSE_CURSOR_IBEAM);
     }else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
     
-    draw_angle_arrow(get_working_angle());
+    if(!(is_started() || is_render_started())) draw_angle_arrow(get_working_angle());
 }
 
 char *get_text_string(TextboxName name , int * str_len){

@@ -60,3 +60,14 @@ Vector2 max_coordinats(World2d world ){
 void free_world2d(World2d world){
     free(world);
 }
+
+float vx(World2d world , float t){
+    return (float)(world->v0 *cos(world->angle));
+}
+float vy(World2d world , float t){
+    return (float)(world->v0 * sin(world->angle) - world->G *t);
+}
+
+float mx_d(World2d world){
+    return ((world->v0 * world->v0) / world->G * sin(world->angle));
+}

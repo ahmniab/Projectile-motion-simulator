@@ -13,6 +13,7 @@
         "istream": "c",
         "tuple": "c",
         "utility": "c",
-        "cmath": "c"
+        "cmath": "c",
+        "timer.h": "c"
     }
 }

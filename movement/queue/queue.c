@@ -8,6 +8,7 @@ Queue create_queue(){
 	queue->front = NULL;
 	queue->rear = NULL;
 	queue->size = 0;
+	return queue;
 }
 
 void enqueue (Queue queue, void* item) {
@@ -25,7 +26,7 @@ void enqueue (Queue queue, void* item) {
 }
 
 void* dequeue (Queue queue) {
-	assert(is_q_empty(queue));
+	assert(!is_q_empty(queue));
 
 	QueueNode * node = queue->front;
 	queue->front = node->next;
@@ -36,17 +37,34 @@ void* dequeue (Queue queue) {
 	return item;
 }
 void* queue_front (Queue queue) {
-	assert(is_q_empty(queue));
+	assert(!is_q_empty(queue));
 	void* item = queue->front->element ;
+
+	return item;
+}
+void* queue_rear (Queue queue) {
+	assert(!is_q_empty(queue));
+	void* item = queue->rear->element ;
 
 	return item;
 }
 
 int is_q_empty (Queue queue) {
-	return queue->size;
+	return !queue->size ;
 }
 
 int is_q_full (Queue queue) {
 	return 0;
 }
 
+void free_queue(Queue queue){
+	assert(queue);
+	for (QueueNode *front = queue->front; front; )
+	{
+		QueueNode *n = front;
+		front = front->next;
+		free(n); 
+	}
+	free(queue);
+	
+}

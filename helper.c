@@ -68,6 +68,13 @@ float get_G(){
     return G;
 }
 
+float get_play_factor(){
+    int sp_str_len;
+    char* sp_str = get_text_string(PLAY_TEXTBOX , &sp_str_len);
+    float sp = str_2_pos_float(sp_str , sp_str_len);
+    return sp;
+}
+
 
 void set_angle_textbox(int angle){
     int len;
@@ -85,5 +92,12 @@ void set_g_textbox(float G){
     int len;
     char *str_G = get_text_string(G_TEXTBOX , &len);
     sprintf(str_G , "%.2f" , G);
+
+}
+
+void set_play_factor_textbox(float factor){
+    int len;
+    char *str_factor = get_text_string(PLAY_TEXTBOX , &len);
+    sprintf(str_factor , "%.2f" , factor);
 
 }
