@@ -118,3 +118,14 @@ float ease_in(float t) {
 float ease_out(float t) {
     return t * (2 - t);
 }
+
+Texture2D backgraund;
+void init_wallpaper(){
+    backgraund = LoadTexture("assets/imgs/wallpaper.png");
+}
+void draw_wallpaper(){
+    DrawTexture(backgraund , 0 , 0 ,WHITE);
+}
+void free_wallpaper(){
+    UnloadTexture(backgraund );
+}

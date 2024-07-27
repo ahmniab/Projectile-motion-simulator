@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include "objs/values_board.h"
+#include "controles/checkbox.h"
 #include <stddef.h>
 
 #define SCREEN_W 1920
@@ -13,8 +13,8 @@ int main()
 
     SetWindowState(FLAG_WINDOW_UNDECORATED);
 
-    init_values_board();
     Font font = LoadFontEx("assets/fonts/Montserrat_MediumItalic.ttf", 70, NULL,0);
+    Checkbox *chbx = init_checkbox(100 , 100 , "XDDD",false, &font);
 
 
     while (!WindowShouldClose())        
@@ -22,12 +22,12 @@ int main()
  
         BeginDrawing();
             ClearBackground((Color){ 13, 13, 13, 255 });
-            draw_board(10 ,20,45,font, 0.5);
+            draw_check_box(chbx);
         EndDrawing();
     }
 
-    free_board();
     UnloadFont(font);
+    free_checkbox(chbx);
     CloseWindow();
     return 0;
 }

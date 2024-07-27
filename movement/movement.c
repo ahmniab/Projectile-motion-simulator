@@ -450,7 +450,7 @@ void update_ball_position(double time){
     __VY__ = vy(physics_world , time) ;
     ball_time_now = time;
     draw_ball_path();
-    draw_v_components();
+    if(get_checkbox_value(COMPONENTS_CHECKBOX)) draw_v_components();
 
 }
 void draw_ball_path_in_time(double time){
@@ -571,17 +571,18 @@ void render_sup_world(){
             {
                 play_timer(timer);
             }
-            drow_world_height();
-            drow_world_width();
             
             
-            // if (render_started)
-            // {
-                // draw_v_components();
-            // }
+            if (render_started && get_checkbox_value(COMPONENTS_CHECKBOX))
+            {
+                draw_v_components();
+            }
             draw_ball(ballPosition.x , ballPosition.y);
             
             if(!render_started) draw_ball_path();
+
+            drow_world_height();
+            drow_world_width();
         EndMode2D();
     EndTextureMode();
 }

@@ -14,6 +14,7 @@
         "tuple": "c",
         "utility": "c",
         "cmath": "c",
-        "timer.h": "c"
+        "timer.h": "c",
+        "checkbox.h": "c"
     }
 }

@@ -8,7 +8,7 @@
 #define SCREEN_H 1080
 #define SCREEN_W 1920
 #define GROUND_LEVEL 896
-#define DEVELOPER_MOOD
+// #define DEVELOPER_MOOD
 // #define PREVIEW_MOOD
 
 

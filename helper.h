@@ -12,5 +12,8 @@ void set_play_factor_textbox(float factor);
 int max(int a , int b);
 int min(int a , int b);
 float ease_in(float t);
-float ease_out(float t) ;
+float ease_out(float t);
+void init_wallpaper();
+void draw_wallpaper();
+void free_wallpaper();
 #endif // HELPER_H
