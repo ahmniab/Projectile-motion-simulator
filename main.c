@@ -5,7 +5,7 @@
 
 
 int main(){
-    InitWindow(SCREEN_W , SCREEN_H, "physics");
+    InitWindow(SCREEN_W , SCREEN_H, "Projectile Motion Simulator");
     SetTargetFPS(60);
     SetWindowState(FLAG_WINDOW_UNDECORATED);
 
@@ -20,7 +20,9 @@ int main(){
             if(!is_render_started()) draw_controler();
             else
             {
-                rendering_screen();
+                #ifndef PREVIEW_MOOD
+                    rendering_screen();
+                #endif
             }
             
         EndDrawing();

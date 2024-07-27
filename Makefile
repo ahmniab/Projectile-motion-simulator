@@ -10,7 +10,7 @@ helper.o: helper.c helper.h
 	${CC} -c helper.c -o binaries/helper.o ${flags}
 
 ball.o: objs/ball.c objs/ball.h
-	${CC} -c objs/ball.c -o -o binaries/ball.o  ${flags}
+	${CC} -c objs/ball.c -o binaries/ball.o  ${flags}
 
 Mab.o: Mab/Mab.c Mab/Mab.h
 	${CC} -c Mab/Mab.c  ${flags}

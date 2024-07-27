@@ -1,4 +1,4 @@
 #!/bin/bash
 # windres -i rcfile.rc -o rcfile.data
-/C/raylib/w64devkit/bin/gcc.exe -o PMS.exe main.c movement/movement.c movement/physics/engine.c helper.c objs/ball.c controles/text_box.c controles/controles.c objs/angle_arrow.c movement/timer.c movement/queue/queue.c ffmpeg_windows.c rcfile.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -I./objs/ -I./controles/ -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
+/C/raylib/w64devkit/bin/gcc.exe -o PMS.exe main.c movement/movement.c movement/physics/engine.c helper.c objs/ball.c objs/values_board.c controles/text_box.c controles/controles.c objs/angle_arrow.c movement/timer.c movement/queue/queue.c ffmpeg_windows.c rcfile.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -I./objs/ -I./controles/ -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
 ./PMS

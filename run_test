@@ -1,4 +1,3 @@
 #!/bin/bash
-
-/C/raylib/w64devkit/bin/gcc.exe -o test.exe test.c movement/queue/queue.c movement/timer.c  /C/raylib/raylib/src/raylib.rc.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -I./objs/ -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
+/C/raylib/w64devkit/bin/gcc.exe -o test.exe test.c objs/values_board.c -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -I./objs/ -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
 ./test

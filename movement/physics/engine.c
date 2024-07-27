@@ -69,5 +69,5 @@ float vy(World2d world , float t){
 }
 
 float mx_d(World2d world){
-    return ((world->v0 * world->v0) / world->G * sin(world->angle));
+    return ((world->v0 * world->v0)  * sin(2*world->angle)/ world->G);
 }

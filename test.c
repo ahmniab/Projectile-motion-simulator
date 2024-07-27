@@ -1,38 +1,33 @@
 #include "raylib.h"
-#include <math.h>
-#include "movement/timer.h"
-#include <stdio.h>
+#include "objs/values_board.h"
+#include <stddef.h>
 
-void draw_red_circle(){
-    DrawCircle(250, 250, 50, RED);
-    // printf("red function\n");
-}
+#define SCREEN_W 1920
+#define SCREEN_H 1080
 
-void draw_green_circle(){
-    DrawCircle(250, 250, 50, GREEN);
-    // printf("green function\n");
-}
+int main()
+{
+
+    InitWindow(SCREEN_W, SCREEN_H, "NULL");
+    SetTargetFPS(60);  
+
+    SetWindowState(FLAG_WINDOW_UNDECORATED);
+
+    init_values_board();
+    Font font = LoadFontEx("assets/fonts/Montserrat_MediumItalic.ttf", 70, NULL,0);
 
 
-int main(){
-    InitWindow(500 , 500, "test");
-    SetTargetFPS(60);
-    Timer *timer = create_timer();
-    add_function(timer,&draw_red_circle , 3 , 1);
-    add_function(timer,&draw_green_circle , 4 , 0.2);
-    // void (*fn)(void) = &draw_green_circle;
-    while (!WindowShouldClose())
+    while (!WindowShouldClose())        
     {
-
+ 
         BeginDrawing();
-            ClearBackground(RAYWHITE);
-            play_timer(timer);
-            // (*fn)();
+            ClearBackground((Color){ 13, 13, 13, 255 });
+            draw_board(10 ,20,45,font, 0.5);
         EndDrawing();
-        
-    
     }
-    free_timer(timer);
-    CloseWindow();
-}
 
+    free_board();
+    UnloadFont(font);
+    CloseWindow();
+    return 0;
+}

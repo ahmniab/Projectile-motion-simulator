@@ -19,6 +19,7 @@ void add_function(Timer *timer,void (*action)(double) , double life_time , doubl
 void wait_time(Timer *timer , double time);
 void set_end_fn(Timer *timer , void (*end_fn)(void));
 void set_time_now(Timer *timer , double time_now);
+void set_end_action(Timer *timer , void (*end_action)());
 void start_timer(Timer *timer);
 void play_timer(Timer *timer);
 void free_timer(Timer *timer);

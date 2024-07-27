@@ -9,6 +9,7 @@ typedef struct __TIMER_NODE_
     double left_time;
     double time_now;
     void (*action)(double);
+    void (*end_action)();
 }Timer_node;
 
 Timer *create_timer(){
@@ -37,6 +38,7 @@ void add_function(Timer *timer,void (*action)(double) , double life_time , doubl
     new_timer_node->left_time = life_time;
     new_timer_node->time_now = 0;
     new_timer_node->action = action;
+    new_timer_node->end_action = NULL;
     new_timer_node->slow_down_factor = slow_down_factor;
     timer->total_time += life_time; 
 
@@ -58,6 +60,17 @@ void set_time_now(Timer *timer , double time_now){
         }
     }
 }
+void set_end_action(Timer *timer , void (*end_action)()){
+    assert(timer);
+    if (!is_q_empty(timer->actions))
+    {
+        Timer_node *node = (Timer_node*)queue_rear (timer->actions) ;
+        node->end_action = end_action;
+        printf("TIMER: end action set\n");
+        
+    }
+    
+}
 void play_timer(Timer *timer){
     assert(timer);
     if (!timer->end)
@@ -75,9 +88,20 @@ void play_timer(Timer *timer){
         Timer_node *node = (Timer_node*)queue_front (timer->actions) ;
         if (node->left_time <= 0 )
         {
+            if(node->end_action) {
+                (*node->end_action)();
+                printf("TIMER: end action executed\n");
+
+            }
+            
             node = dequeue(timer->actions);
             free(node);
-            return;
+            if (is_q_empty(timer->actions)){ 
+                timer->time_now = 0;
+                timer->total_time = 0;
+                return;
+            }
+            node = (Timer_node*)queue_front (timer->actions) ;
         }
         if (node->action)
         {        

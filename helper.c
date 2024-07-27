@@ -101,3 +101,20 @@ void set_play_factor_textbox(float factor){
     sprintf(str_factor , "%.2f" , factor);
 
 }
+
+int max(int a , int b){
+    if (a > b) return a;
+    return b;
+} 
+int min(int a , int b){
+    if (a < b) return a;
+    return b;
+} 
+
+float ease_in(float t) {
+    return t * t;
+}
+
+float ease_out(float t) {
+    return t * (2 - t);
+}
