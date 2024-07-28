@@ -14,7 +14,7 @@ this is video showes how it looks like
 </br>
 </br>
 
-[Watch the video](./out/G_is-10.00_V0_is-15_angle_is-45_slow_is_1.0.mp4)
+[Watch the video](./out/output.mp4)
 
 ## How to use it
 ### Textboxes
