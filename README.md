@@ -13,8 +13,8 @@ This app is disigned to generate HD(1920x1080) videos that simulates the motion 
 this is video showes how it looks like
 </br>
 </br>
+<video controls src="./out/G_is-10.00_V0_is-15_angle_is-45_slow_is_1.0.mp4"></video>
 
-[Watch the video](./out/output.mp4)
 
 ## How to use it
 ### Textboxes
@@ -45,14 +45,18 @@ There is one chackbox for now it for drawing Velocity compontets all video time 
 ### keyboard
 <ol>
     <li>
-        <code>ESC</code> This key is specialized for from program
+        <code>ESC</code> This key is specialized to exit from program
     </li>
     <li>
-        <code>Space</code> This is specialized kay for preview the ball path  
+        <code>Space</code> This key is specialized to preview the ball path  
     </li>
     <li>
-        <code>Ctrl + R</code> This two kays are specialized for render the final vidoe 
+        <code>Ctrl + R</code> This two keys are specialized to render the final vidoe 
     </li>
+    <li>
+        <code>F</code> This key is specialized to go full screen  
+    </li>
+    
 </ol>
 
 ## Render
@@ -62,7 +66,7 @@ So don't worry about this window
 
 ## Download 
 ### Windows (64 bit)
-you can download it from here [Projectile motion simulator ](https://github.com/ahmniab/Projectile-motion-simulator/releases/tag/win64-1)
+you can download it from here [Projectile motion simulator ](#)
 </br>
 **Please you need trust me when this warning appears** </br></br>
 ![warning](./assets/imgs/win_warning.png)</br>
