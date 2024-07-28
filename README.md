@@ -70,7 +70,7 @@ So don't worry about this window
 
 ## Download 
 ### Windows (64 bit)
-you can download it from here [Projectile motion simulator ](#)
+you can download it from here [Projectile motion simulator ](https://github.com/ahmniab/Projectile-motion-simulator/releases/tag/win64-1)
 </br>
 **Please you need trust me when this warning appears** </br></br>
 ![warning](./assets/imgs/win_warning.png)</br>
