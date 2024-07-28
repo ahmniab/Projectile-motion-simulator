@@ -13,7 +13,11 @@ This app is disigned to generate HD(1920x1080) videos that simulates the motion 
 this is video showes how it looks like
 </br>
 </br>
-<video controls src="./out/G_is-10.00_V0_is-15_angle_is-45_slow_is_1.0.mp4"></video>
+
+
+
+https://github.com/user-attachments/assets/fcd1e023-c14a-4a7f-8d50-b100a7c45abe
+
 
 
 ## How to use it
