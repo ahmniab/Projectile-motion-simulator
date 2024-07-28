@@ -100,5 +100,5 @@ sudo pkg install ffmpeg         [On FreeBSD]
 ### Windows soon
 
 ## Feedback
-Email : ahmnaib11@gmail.com
+Email : ahmnaib11@gmail.com </br>
 LinkedIn: https://www.linkedin.com/in/ahmniab/
