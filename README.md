@@ -8,9 +8,9 @@
 > This software is unfinished. Keep your expectations low.
 
 ## Usage
-This app is disigned to generate HD(1920x1080) videos that simulates the motion of Projectile
+This app is designed to generate HD(1920x1080) videos that simulates the motion of Projectile
 </br>
-this is video showes how it looks like
+This is A video that shows what it looks like
 </br>
 </br>
 
@@ -27,11 +27,11 @@ You can enter the values you want in textbox there are 4 textboxes
 <ol>
     <li> 
         <strong>Angle</strong>
-        : this takes intger value like( 1 , 2 ,3 ) only , (1.1 , 0.3) are not allowed
+        : this takes integer value like( 1 , 2 ,3 ) only , (1.1 , 0.3) are not allowed
      </li>
     <li>
         <strong>Velocity</strong>: 
-        The values as same as Anlge
+        The values as same as Angle
     </li>
     <li>
         <strong>Gravity</strong>:
@@ -39,13 +39,13 @@ You can enter the values you want in textbox there are 4 textboxes
     </li>
     <li>
         <strong>Slowdown</strong>:
-        Takes values like Gravity , this value slow down the time , the value 1 does no effict , the value 2 will slowdown the time by 2 and so on .... ,
+        Takes values like Gravity , this value slow down the time , the value 1 does no affect , the value 2 will slowdown the time by 2 and so on .... ,
     </li>
     
 </ol>
 
 ### Checkboxes
-There is one chackbox for now it for drawing Velocity compontets all video time if you un check it the components will be drown on the max height the ball will reatch only
+There is one checkbox for now it for drawing Velocity components all video time if you un check it the components will be drown on the max height the ball will reach only
 ### keyboard
 <ol>
     <li>
@@ -55,7 +55,7 @@ There is one chackbox for now it for drawing Velocity compontets all video time 
         <code>Space</code> This key is specialized to preview the ball path  
     </li>
     <li>
-        <code>Ctrl + R</code> This two keys are specialized to render the final vidoe 
+        <code>Ctrl + R</code> These two keys are specialized to render the final video 
     </li>
     <li>
         <code>F</code> This key is specialized to go full screen  
