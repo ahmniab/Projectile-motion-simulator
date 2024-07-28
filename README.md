@@ -78,3 +78,13 @@ you can download it from here [Projectile motion simulator ](#)
 This project is fully open source and safe
 
 ### Linux soon
+
+## Build
+### for linux
+To build this project you have to [install raylib](https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux) first </br>
+Then you can run this command 
+```bash
+gcc -o PMS main.c movement/movement.c movement/physics/engine.c helper.c objs/ball.c objs/values_board.c controles/text_box.c controles/controles.c objs/angle_arrow.c movement/timer.c movement/queue/queue.c ffmpeg_windows.c controles/checkbox.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+```
+**NOTE: Makefile doesn't work yet**
+### Windows soon
