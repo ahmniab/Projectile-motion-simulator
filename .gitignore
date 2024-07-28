@@ -1,6 +1,6 @@
 screen/*
 *.exe
 *.data
-*.mp4
+# *.mp4
 test.c
 run_test

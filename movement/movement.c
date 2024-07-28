@@ -573,7 +573,7 @@ void render_sup_world(){
             }
             
             
-            if (render_started && get_checkbox_value(COMPONENTS_CHECKBOX))
+            if (started && get_checkbox_value(COMPONENTS_CHECKBOX))
             {
                 draw_v_components();
             }
