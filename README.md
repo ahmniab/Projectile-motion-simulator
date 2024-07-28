@@ -86,5 +86,18 @@ Then you can run this command
 ```bash
 gcc -o PMS main.c movement/movement.c movement/physics/engine.c helper.c objs/ball.c objs/values_board.c controles/text_box.c controles/controles.c objs/angle_arrow.c movement/timer.c movement/queue/queue.c ffmpeg_windows.c controles/checkbox.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 ```
+**You also need to download FFMPEG**
+```
+sudo apt install ffmpeg         [On Debian, Ubuntu and Mint]
+sudo yum install ffmpeg         [On RHEL/CentOS/Fedora and Rocky/AlmaLinux]
+sudo emerge -a sys-apps/ffmpeg  [On Gentoo Linux]
+sudo apk add ffmpeg             [On Alpine Linux]
+sudo pacman -S ffmpeg           [On Arch Linux]
+sudo zypper install ffmpeg      [On OpenSUSE]    
+sudo pkg install ffmpeg         [On FreeBSD]
+```
 **NOTE: Makefile doesn't work yet**
 ### Windows soon
+
+## Feedback
+Email : ahmnaib11@gmail.com
