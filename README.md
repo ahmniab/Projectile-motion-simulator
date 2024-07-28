@@ -14,7 +14,11 @@ this is video showes how it looks like
 </br>
 </br>
 
-[Watch the video](./out/output.mp4)
+
+
+https://github.com/user-attachments/assets/fcd1e023-c14a-4a7f-8d50-b100a7c45abe
+
+
 
 ## How to use it
 ### Textboxes
