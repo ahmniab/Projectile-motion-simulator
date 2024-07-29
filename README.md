@@ -77,7 +77,8 @@ you can download it from here [Projectile motion simulator ](https://github.com/
 
 This project is fully open source and safe
 
-### Linux soon
+### Linux
+> [Fedora 64bit X server](https://github.com/ahmniab/Projectile-motion-simulator/releases/tag/fedora-linux64-x11-1)
 
 ## Build
 ### for linux
