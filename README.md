@@ -100,6 +100,11 @@ sudo pkg install ffmpeg         [On FreeBSD]
 **NOTE: Makefile doesn't work yet**
 ### Windows soon
 
+## NOTE 
+These files
+`ffmpeg.h` `ffmpeg_windows.c` `ffmpeg_linux.c`
+***ARE NOT MINE*** I toke them from [musializer](https://github.com/tsoding/musializer)
+
 ## Feedback
 Email : ahmnaib11@gmail.com </br>
 LinkedIn: https://www.linkedin.com/in/ahmniab/
