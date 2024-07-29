@@ -1,6 +1,6 @@
 # Projectile motion simulator
 
-<p align=center>
+<p align=center style="width:70%">
   <img src="./assets\imgs\logo.png">
 </p>
 
